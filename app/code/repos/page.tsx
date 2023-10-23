@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import { GithubRepo } from '@/app/type/github'
 import { FaStar, FaCodeBranch, FaEye } from 'react-icons/fa'
 
 async function fetchRepos() {
@@ -18,7 +19,7 @@ const ReposPage = async () => {
     <div className="repos-container">
       <h2>Repostories</h2>
       <ul className="repo-list">
-        {repos.map((repo: githubRepo) => (
+        {repos.map((repo: GithubRepo) => (
           <li key={repo.id}>
             <Link href={`/code/repos/${repo.name}`}>
               <h3>{repo.name}</h3>
@@ -43,12 +44,3 @@ const ReposPage = async () => {
 }
 
 export default ReposPage
-
-type githubRepo = {
-  id: number
-  name: string
-  description: string
-  stargazers_count: number
-  forks_count: number
-  watchers_count: number
-}
