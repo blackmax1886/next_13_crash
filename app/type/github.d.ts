@@ -7,4 +7,9 @@ type GithubRepo = {
   watchers_count: number
 }
 
-export { GithubRepo }
+type GithubRepoContent = {
+  path: string
+  type: string
+}
+
+export { GithubRepo, GithubRepoContent }
