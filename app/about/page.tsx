@@ -1,5 +1,8 @@
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'About My Media',
+}
 const AboutPage = () => {
   return (
     <div>
