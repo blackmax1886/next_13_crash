@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
-import { GithubRepo } from '@/app/type/github'
 import { FaStar, FaCodeBranch, FaEye } from 'react-icons/fa'
+
+import { GithubRepo } from '@/app/type/github'
 
 async function fetchRepos() {
   const response = await fetch(

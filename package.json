@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint --fix app/**/*.{ts,tsx,json,md}",
+    "fmt": "prettier --write app/**/*.{ts,tsx,json,md}"
   },
   "dependencies": {
     "next": "13.5.6",

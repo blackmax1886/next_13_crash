@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaStar, FaCodeBranch, FaEye } from 'react-icons/fa'
+
 import { GithubRepo } from '../type/github'
 
 type RepoProps = {
