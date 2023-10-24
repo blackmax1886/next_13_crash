@@ -1,7 +1,9 @@
 import './globals.css'
 import { Poppins } from 'next/font/google'
+import { Suspense } from 'react'
 
 import Header from './components/Header'
+import LoadingPage from './loading'
 
 import type { Metadata } from 'next'
 
@@ -26,7 +28,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <Header />
-        <main className="container">{children}</main>
+        <Suspense fallback={<LoadingPage></LoadingPage>}>
+          <main className="container">{children}</main>
+        </Suspense>
       </body>
     </html>
   )
