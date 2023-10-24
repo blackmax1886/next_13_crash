@@ -13,7 +13,6 @@ async function fetchRepoContents(name: string): Promise<GithubRepoContent[]> {
     `https://api.github.com/repos/blackmax1886/${name}/contents`
   )
   const contents = await response.json()
-  console.log(contents)
   return contents
 }
 
