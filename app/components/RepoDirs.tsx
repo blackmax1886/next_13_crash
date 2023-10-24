@@ -10,7 +10,8 @@ type RepoDirsProps = {
 async function fetchRepoContents(name: string): Promise<GithubRepoContent[]> {
   await new Promise((resolve) => setTimeout(resolve, 3000))
   const response = await fetch(
-    `https://api.github.com/repos/blackmax1886/${name}/contents`
+    `https://api.github.com/repos/blackmax1886/${name}/contents`,
+    { next: { revalidate: 60 } }
   )
   const contents = await response.json()
   return contents

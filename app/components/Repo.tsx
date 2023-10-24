@@ -9,7 +9,8 @@ type RepoProps = {
 
 async function fetchRepo(name: string): Promise<GithubRepo> {
   const response = await fetch(
-    `https://api.github.com/repos/blackmax1886/${name}`
+    `https://api.github.com/repos/blackmax1886/${name}`,
+    { next: { revalidate: 60 } }
   )
   const repo = await response.json()
 

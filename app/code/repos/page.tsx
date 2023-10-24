@@ -6,7 +6,9 @@ import { GithubRepo } from '@/app/type/github'
 
 async function fetchRepos() {
   const response = await fetch(
-    'https://api.github.com/users/blackmax1886/repos'
+    'https://api.github.com/users/blackmax1886/repos',
+    // キャッシュされたデータを60秒後に再検証する
+    { next: { revalidate: 60 } }
   )
   await new Promise((resolve) => setTimeout(resolve, 1000))
   const repos = await response.json()
