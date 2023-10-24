@@ -3,14 +3,7 @@ import React from 'react'
 
 import Course from '../type/course'
 
-async function fetchCourses() {
-  const response = await fetch('http://localhost:3000/api/courses')
-  const courses = await response.json()
-  return courses
-}
-
-const Courses = async () => {
-  const courses = await fetchCourses()
+const Courses = async ({ courses }: { courses: Course[] }) => {
   return (
     <div className="courses">
       {courses.map((course: Course) => (
